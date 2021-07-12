@@ -21,7 +21,7 @@
                     <tr v-if="(user.id) == (task.user_id)">
                         <td class="text-center">{{ task.id }}</td>
                         <td class="text-left">{{ task.title }}</td>
-                        <td class="text-center"><button class="text-green-400" @click.prevent="details">More</button></td>
+                        <td class="text-center"><router-link class="text-green-400" to='/details' exact>More</router-link></td>
                     </tr>
                 </tbody>
             </table>

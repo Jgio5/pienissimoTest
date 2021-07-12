@@ -3,6 +3,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import NotFound from './components/NotFound';
+import Details from './components/Details';
 
 export default {
     mode: 'history',
@@ -25,6 +26,10 @@ export default {
             path: '/login',
             component: Login,
             name: 'Login'
+        },
+        {
+            path: '/details',
+            component: Details,
         },
         {
             path: '/dashboard',

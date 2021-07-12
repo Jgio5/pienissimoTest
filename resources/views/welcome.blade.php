@@ -6,7 +6,6 @@
 
             <div class="flex">
                 <router-link class="mr-4" to='/' exact>Home</router-link>
-                <router-link to='/about'>About</router-link>
             </div>
 
             <div class="flex">

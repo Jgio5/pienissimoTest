@@ -1942,6 +1942,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19860,42 +19861,46 @@ var render = function() {
       "div",
       { staticClass: "flex justify-center pt-20 text-2xl text-black-800" },
       [
-        _c("table", { staticClass: "table-auto" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            { staticClass: "m-4" },
-            _vm._l(_vm.tasks, function(task, index) {
-              return _c("tr", { key: index }, [
-                _c("td", { staticClass: "text-center" }, [
-                  _vm._v(_vm._s(task.id))
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-left" }, [
-                  _vm._v(_vm._s(task.title))
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "text-green-400",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.details.apply(null, arguments)
-                        }
-                      }
-                    },
-                    [_vm._v("More")]
-                  )
-                ])
+        _c(
+          "table",
+          { staticClass: "table-auto" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._l(_vm.tasks, function(task) {
+              return _c("tbody", { key: task, staticClass: "m-4" }, [
+                _vm.user.id == task.user_id
+                  ? _c("tr", [
+                      _c("td", { staticClass: "text-center" }, [
+                        _vm._v(_vm._s(task.id))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "text-left" }, [
+                        _vm._v(_vm._s(task.title))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "text-center" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "text-green-400",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.details.apply(null, arguments)
+                              }
+                            }
+                          },
+                          [_vm._v("More")]
+                        )
+                      ])
+                    ])
+                  : _vm._e()
               ])
-            }),
-            0
-          )
-        ])
+            })
+          ],
+          2
+        )
       ]
     ),
     _vm._v(" "),

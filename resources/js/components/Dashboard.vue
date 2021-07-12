@@ -16,11 +16,12 @@
                         <th class="rounded-r-lg px-2 bg-green-400">View</th>
                     </tr>
                 </thead>
-                <tbody class="m-4">
-                    <tr v-for="(task, index) in tasks" :key="index">
-                    <td class="text-center">{{ task.id }}</td>
-                    <td class="text-left">{{ task.title }}</td>
-                    <td><button class="text-green-400" @click.prevent="details">More</button></td>
+
+                <tbody class="m-4" v-for="task in tasks" :key="task">
+                    <tr v-if="(user.id) == (task.user_id)">
+                        <td class="text-center">{{ task.id }}</td>
+                        <td class="text-left">{{ task.title }}</td>
+                        <td class="text-center"><button class="text-green-400" @click.prevent="details">More</button></td>
                     </tr>
                 </tbody>
             </table>
